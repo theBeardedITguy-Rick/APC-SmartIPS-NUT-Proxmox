@@ -1,5 +1,10 @@
 # APC Smart-UPS C1500 Monitoring with Network UPS Tools (NUT) on Proxmox
 
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![Platform](https://img.shields.io/badge/Platform-Proxmox-blue)
+![Monitoring-Prometheus](https://img.shields.io/badge/Monitoring-Prometheus-orange)
+![Visualization-Grafana-F46800)
+
 ## Overview
 
 This project demonstrates the deployment and configuration of Network UPS Tools (NUT) on a Proxmox VE host to monitor and manage an APC Smart-UPS C1500 over USB.
@@ -294,6 +299,20 @@ network_ups_tools_ups_status{flag="OB"}
 ```
 ---
 
+## Lessons Learned
+
+During implementation, several challenges were encountered and resolved:
+
+- USB communication issues between NUT and the APC UPS
+- Driver initialization failures
+- Permission-related HID access problems
+- NUT Exporter configuration troubleshooting
+- Prometheus target configuration and metric validation
+
+The troubleshooting process reinforced the importance of validating hardware detection, isolating communication layers, and testing services individually before integrating monitoring platforms.
+
+---
+
 ## Skills Demonstrated
 
 ### Infrastructure
@@ -330,9 +349,11 @@ network_ups_tools_ups_status{flag="OB"}
 
 ## Outcome
 
-Successfully deployed and configured Network UPS Tools (NUT) on a Proxmox host to monitor an APC Smart-UPS C1500.
+Successfully deployed a complete UPS monitoring solution using Network UPS Tools (NUT), Prometheus, and Grafana.
 
-The UPS is fully operational and reporting real-time battery status, runtime information, and power conditions, providing a foundation for future automated shutdown and alerting workflows.
+The APC Smart-UPS C1500 is now providing real-time operational metrics including battery charge, runtime, voltage, and power status.
+
+This project established a monitoring foundation that can be expanded to support automated shutdown procedures, alerting, and infrastructure resiliency improvements across the homelab environment.
 
 ---
 
