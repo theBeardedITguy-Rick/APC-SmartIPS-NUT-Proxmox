@@ -183,26 +183,6 @@ Active: active (running)
 
 ---
 
-## Screenshots
-
-### UPS Detection
-
-![UPS Detection](screenshots/01-lsusb-detection.png)
-
-### Driver Communication
-
-![Driver Communication](screenshots/02-driver-debug.png)
-
-### UPS Status Output
-
-![UPS Status](screenshots/03-upsc-output.png)
-
-### NUT Server Running
-
-![NUT Server](screenshots/04-nut-server-status.png)
-
----
-
 ## Current Capabilities
 
 - UPS Battery Monitoring
