@@ -3,7 +3,7 @@
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 ![Platform](https://img.shields.io/badge/Platform-Proxmox-blue)
 ![Monitoring-Prometheus](https://img.shields.io/badge/Monitoring-Prometheus-orange)
-![Visualization-Grafana-F46800)
+![Grafana](https://img.shields.io/badge/Visualization-Grafana-F46800)
 
 ## Overview
 
