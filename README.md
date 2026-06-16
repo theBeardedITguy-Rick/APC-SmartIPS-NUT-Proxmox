@@ -235,7 +235,7 @@ A NUT Exporter container was deployed on `docker01` to expose NUT metrics to Pro
 Exporter test:
 
 ```bash
-curl "http://localhost:9199/ups_metrics?server=192.168.99.108&port=3493"
+curl "http://localhost:9199/ups_metrics?server=192.168.99.XXX&port=3493"
 ```
 
 Example metrics:
@@ -252,10 +252,10 @@ network_ups_tools_ups_status{flag="OL"} 1
 - job_name: 'nut-ups'
   metrics_path: /ups_metrics
   params:
-    server: ['192.168.99.108']
+    server: ['192.168.99.xxx']
     port: ['3493']
   static_configs:
-    - targets: ['192.168.40.101:9199']
+    - targets: ['192.168.40.xxx:9199']
 ```
 
 ### Verification
