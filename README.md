@@ -218,14 +218,42 @@ Active: active (running)
 
 ### Planned Improvements
 
-- Automatic Proxmox Graceful Shutdown
-- Home Assistant Integration
-- Grafana Dashboard Visualization
+- Automatic Proxmox Host Shutdown During Extended Power Loss
+- Graceful VM Shutdown Integration
 - Email Alerting
-- Mobile Push Notifications
-- Multi-Host UPS Monitoring
+- Microsoft Teams Notifications
+- Home Assistant Integration
+- UPS Runtime Trend Analysis
+- Multi-UPS Monitoring
+- Battery Health Alerting
+  
+---
+
+## Architecture
+
+```text
+APC Smart-UPS C1500
+        |
+        | USB
+        v
+hs-2 Proxmox Host
+Network UPS Tools (NUT)
+        |
+        | TCP 3493
+        v
+docker01
+NUT Exporter
+        |
+        | HTTP 9199
+        v
+Prometheus
+        |
+        v
+Grafana Dashboard
+```
 
 ---
+
 ## Prometheus and Grafana Integration
 
 ### NUT Exporter
@@ -325,6 +353,34 @@ network_ups_tools_ups_status{flag="OB"}
 Successfully deployed and configured Network UPS Tools (NUT) on a Proxmox host to monitor an APC Smart-UPS C1500.
 
 The UPS is fully operational and reporting real-time battery status, runtime information, and power conditions, providing a foundation for future automated shutdown and alerting workflows.
+
+---
+
+## Screenshots
+
+### UPS Detection
+
+![UPS Detection](screenshots/01-lsusb-detection.png)
+
+### Driver Detection
+
+![Driver Detection](screenshots/02-driver-debug.png)
+
+### UPS Status Output
+
+![UPS Status](screenshots/03-upsc-output.png)
+
+### NUT Service Status
+
+![NUT Service](screenshots/04-nut-server-status.png)
+
+### Prometheus Target
+
+![Prometheus Target](screenshots/05-prometheus-target-up.png)
+
+### Grafana Dashboard
+
+![Grafana Dashboard](screenshots/06-grafana-dashboard.png)
 
 ---
 
