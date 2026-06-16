@@ -226,6 +226,65 @@ Active: active (running)
 - Multi-Host UPS Monitoring
 
 ---
+## Prometheus and Grafana Integration
+
+### NUT Exporter
+
+A NUT Exporter container was deployed on `docker01` to expose NUT metrics to Prometheus.
+
+Exporter test:
+
+```bash
+curl "http://localhost:9199/ups_metrics?server=192.168.99.108&port=3493"
+```
+
+Example metrics:
+
+```text
+network_ups_tools_battery_charge 100
+network_ups_tools_battery_voltage 27.2
+network_ups_tools_ups_status{flag="OL"} 1
+```
+
+### Prometheus Configuration
+
+```yaml
+- job_name: 'nut-ups'
+  metrics_path: /ups_metrics
+  params:
+    server: ['192.168.99.108']
+    port: ['3493']
+  static_configs:
+    - targets: ['192.168.40.101:9199']
+```
+
+### Verification
+
+Prometheus successfully scraped UPS metrics:
+
+```text
+nut-ups (1/1 up)
+State: UP
+```
+
+### Useful PromQL Queries
+
+```promql
+network_ups_tools_battery_charge
+```
+
+```promql
+network_ups_tools_battery_voltage
+```
+
+```promql
+network_ups_tools_ups_status{flag="OL"}
+```
+
+```promql
+network_ups_tools_ups_status{flag="OB"}
+```
+---
 
 ## Skills Demonstrated
 
