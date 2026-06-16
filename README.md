@@ -309,6 +309,15 @@ network_ups_tools_ups_status{flag="OB"}
 - Service Debugging
 - Root Cause Analysis
 
+### Monitoring and Observability
+
+- Network UPS Tools (NUT)
+- Prometheus
+- Grafana
+- Metrics Collection
+- Infrastructure Monitoring
+- Dashboard Creation
+
 ---
 
 ## Outcome
