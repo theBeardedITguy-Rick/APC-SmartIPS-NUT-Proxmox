@@ -23,6 +23,7 @@ The solution provides real-time UPS monitoring, battery health visibility, runti
 - Troubleshooting Process
 - Verification
 - Current Capabilities
+- Future Enchancements
 - Architecture
 - Prometheus and Grafana Integration
 - Lessons Learned
