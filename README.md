@@ -13,6 +13,25 @@ The solution provides real-time UPS monitoring, battery health visibility, runti
 
 ---
 
+## Table of Contents
+
+- Overview
+- Objective
+- Environment
+- Business Scenario
+- Initial Issue
+- Troubleshooting Process
+- Verification
+- Current Capabilities
+- Architecture
+- Prometheus and Grafana Integration
+- Lessons Learned
+- Skills Demonstrated
+- Outcome
+- Screenshots
+
+---
+
 ## Objective
 
 Implement centralized UPS monitoring on a Proxmox host to improve infrastructure resiliency and business continuity during utility power failures.
